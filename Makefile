@@ -6,7 +6,7 @@ LIBRARY_NAME = newtype
 # add your .c source files, one object per file, to the SOURCES
 # variable, help files will be included automatically, and for GUI
 # objects, the matching .tcl file too
-SOURCES = symbol2.c
+SOURCES = symbol2.c float2.c
 
 # list all pd objects (i.e. myobject.pd) files here, and their helpfiles will
 # be included automatically
