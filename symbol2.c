@@ -87,13 +87,11 @@ static void symbol2_bang(t_symbol2 *x)
 
 static void symbol2_symbol(t_symbol2 *x, t_symbol *s)
 {
-    post("symbol2_symbol %s", s->s_name);
     outlet_symbol(x->x_obj.ob_outlet, x->x_s = s);
 }
 
 static void symbol2_anything(t_symbol2 *x, t_symbol *s, int argc, t_atom *argv)
 {
-    post("symbol2_anything");
     x->x_s = setassymbol(s, argc, argv);
     outlet_symbol(x->x_obj.ob_outlet, x->x_s);
 }
