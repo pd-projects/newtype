@@ -1,42 +1,64 @@
-#N canvas 225 337 709 334 10;
-#X obj 75 104 symbol2;
-#X obj 27 35 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#N canvas 177 124 737 537 10;
+#X obj 69 157 symbol2;
+#X obj 50 79 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X symbolatom 81 138 10 0 0 0 - - -;
-#X obj 66 180 route float symbol list bang;
-#X obj 107 209 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X symbolatom 75 191 10 0 0 0 - - -;
+#X obj 60 233 route float symbol list bang;
+#X obj 101 262 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 141 208 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 135 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 181 208 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 175 261 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 214 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 208 260 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 262 207 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 256 260 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 221 71 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 213 129 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 216 103 makefilename %d;
-#X symbolatom 225 128 10 0 0 0 - - -;
-#X obj 79 59 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 210 156 makefilename %d;
+#X symbolatom 219 181 10 0 0 0 - - -;
+#X obj 73 104 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 0 1;
-#X obj 82 76 + 0.0001;
-#X symbolatom 401 172 50 0 0 0 - - -;
-#X obj 405 128 symbol2;
-#X msg 381 32 blag blahas asdf;
-#X msg 415 59 list 1 2 3;
-#X msg 428 85 1 2 3;
-#X msg 504 107 symbol thisissymbol;
-#X msg 524 82 float 234;
-#X msg 513 35 asdf;
-#X msg 513 62 555.343;
-#X obj 361 244 cnv 15 100 60 empty canvas blag blahas asdf 20 12 0
-14 -233017 -66577 0;
-#X obj 363 213 send canvas;
-#X msg 341 172 label \$1;
-#X msg 332 12 bang;
-#X obj 414 150 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 70 121 + 0.0001;
+#X symbolatom 430 232 50 0 0 0 - - -;
+#X obj 434 188 symbol2;
+#X msg 410 92 blag blahas asdf;
+#X msg 444 119 list 1 2 3;
+#X msg 457 145 1 2 3;
+#X msg 533 167 symbol thisissymbol;
+#X msg 553 142 float 234;
+#X msg 542 95 asdf;
+#X msg 542 122 555.343;
+#X obj 390 304 cnv 15 100 60 empty canvas list is this a list? 20 12
+0 14 -233017 -66577 0;
+#X obj 392 273 send canvas;
+#X msg 371 235 label \$1;
+#X msg 355 71 bang;
+#X obj 443 210 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
+#X msg 35 342 bang;
+#X symbolatom 32 401 10 0 0 0 - - -;
+#X msg 126 343 bang;
+#X symbolatom 123 402 10 0 0 0 - - -;
+#X obj 57 457 route float symbol list bang;
+#X obj 98 486 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#X obj 132 485 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 172 485 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 205 484 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 253 484 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X msg 223 347 bang;
+#X symbolatom 220 406 0 0 0 0 - - -;
+#X obj 124 377 symbol2 9999;
+#X obj 33 376 symbol2 1 2 3;
+#X obj 220 381 symbol2 C:/Documents and Settings/me/My Documents;
+#X msg 398 63 list list is this a list?;
+#X msg 384 38 list is this a list?;
 #X connect 0 0 2 0;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
@@ -62,3 +84,18 @@
 #X connect 22 0 15 0;
 #X connect 25 0 24 0;
 #X connect 26 0 15 0;
+#X connect 28 0 41 0;
+#X connect 30 0 40 0;
+#X connect 32 0 33 0;
+#X connect 32 1 34 0;
+#X connect 32 2 35 0;
+#X connect 32 3 36 0;
+#X connect 32 4 37 0;
+#X connect 38 0 42 0;
+#X connect 40 0 31 0;
+#X connect 40 0 32 0;
+#X connect 41 0 29 0;
+#X connect 41 0 32 0;
+#X connect 42 0 39 0;
+#X connect 43 0 15 0;
+#X connect 44 0 15 0;

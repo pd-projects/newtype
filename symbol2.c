@@ -11,27 +11,33 @@
 
 static t_class *symbol2_class;
 
+static t_symbol* symbol2_sym;
+
 typedef struct _symbol2
 {
     t_object x_obj;
     t_symbol *x_s;
 } t_symbol2;
 
+static int istypeselector(t_symbol* s)
+{
+    if(s == &s_pointer || s == &s_float || s == &s_symbol ||
+       s == &s_bang || s == &s_list || s == symbol2_sym)
+        return 1;
+    else
+        return 0;
+ }
+
 static t_symbol* setassymbol(t_symbol *sel, int argc, t_atom *argv)
 {
     t_symbol* ret = &s_;
     if (argc == 0)
     {
-        if(sel != &s_pointer && sel != &s_float && sel != &s_symbol && 
-           sel != &s_bang && sel != &s_list)
-        {
-            post("0selecter: %s", sel->s_name);
+        if(! istypeselector(sel))
             ret = sel;
-        }
     }
     else if (argc == 1) 
     {
-        post("1selecter: %s", sel->s_name);
         if (argv->a_type == A_FLOAT)
         {
             char buf[MAXPDSTRING];
@@ -49,10 +55,8 @@ static t_symbol* setassymbol(t_symbol *sel, int argc, t_atom *argv)
         t_atom a;
         t_binbuf *bb = binbuf_new();
         /* if starts with a float, leave out the 'list' selector */
-        if(sel != &s_pointer && sel != &s_float && sel != &s_symbol && 
-           sel != &s_bang && sel != &s_list)
+        if(! istypeselector(sel))
         {
-            post("selecter: %s", sel->s_name);
             SETSYMBOL(&a, sel);
             binbuf_add(bb, 1, &a);
         }
@@ -96,7 +100,8 @@ static void symbol2_anything(t_symbol2 *x, t_symbol *s, int argc, t_atom *argv)
 
 void symbol2_setup(void)
 {
-    symbol2_class = class_new(gensym("symbol2"), (t_newmethod)symbol2_new, 0,
+    symbol2_sym = gensym("symbol2");
+    symbol2_class = class_new(symbol2_sym, (t_newmethod)symbol2_new, 0,
         sizeof(t_symbol2), 0, A_GIMME, 0);
     class_addbang(symbol2_class, symbol2_bang);
     class_addsymbol(symbol2_class, symbol2_symbol);
