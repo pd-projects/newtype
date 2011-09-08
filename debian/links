@@ -1,0 +1,3 @@
+usr/lib/pd/extra/newtype/README.txt        usr/share/doc/pd-newtype/README
+usr/lib/pd/extra/newtype/examples          usr/share/doc/pd-newtype/examples
+usr/share/common-licenses/GPL-2             usr/lib/pd/extra/newtype/LICENSE.txt
