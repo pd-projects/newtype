@@ -16,18 +16,13 @@ typedef struct _float2
     t_float x_f;
 } t_float2;
 
-static void *float2_new(t_pd *dummy, t_float f)
+static void *float2_new(t_floatarg f)
 {
     t_float2 *x = (t_float2 *)pd_new(float2_class);
     x->x_f = f;
     outlet_new(&x->x_obj, &s_float);
     floatinlet_new(&x->x_obj, &x->x_f);
     return (x);
-}
-
-static void *float2_new2(t_floatarg f)
-{
-    return (float2_new(0, f));
 }
 
 static void float2_bang(t_float2 *x)
